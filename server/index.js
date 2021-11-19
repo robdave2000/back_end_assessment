@@ -22,4 +22,34 @@ app.get("/api/compliment", (req, res) => {
   
 });
 
+app.get("/api/fortune", (req, res) => {
+  let fortune = ["7 days",
+					 "He who does not wipe is wiped by life",
+					 "The swiftest horse can't overtake a word once spoken",
+           "Before telling secrets on the road, look in the bushes.",
+           "A sharp tongue or pen can kill without a knife"
+  ];
+
+  // choose random fortune
+  let randomIndex = Math.floor(Math.random() * fortune.length);
+  let randomFortune = fortune[randomIndex];
+
+  res.status(200).send(randomFortune);
+  
+});
+
+app.post("/api/addfortune", (req, res) => {
+  const randomFortunes = ["A bad word whispered echoes a hundred miles",
+					 "In a flood of words, surely some mistakes",
+					 "To build it took one hundred years; to destroy it one day",
+  ];
+
+  // choose random fortune
+  let randomIndex = Math.floor(Math.random() * randomFortune.length);
+  let randomFortune = fortune[randomIndex];
+
+  res.status(200).send(randomFortune);
+  
+});
+
 app.listen(4000, () => console.log("Server running on 4000"));
