@@ -38,17 +38,46 @@ app.get("/api/fortune", (req, res) => {
   
 });
 
-app.post("/api/addfortune", (req, res) => {
-  const randomFortunes = ["A bad word whispered echoes a hundred miles",
-					 "In a flood of words, surely some mistakes",
-					 "To build it took one hundred years; to destroy it one day",
+app.get("/api/users", (req, res) => {
+  let users = ["Robert",
+					 "Kaylee",
+					 "Nathan",
+           "Eric",
   ];
 
   // choose random fortune
-  let randomIndex = Math.floor(Math.random() * randomFortune.length);
-  let randomFortune = fortune[randomIndex];
+  let randomIndex = Math.floor(Math.random() * users.length);
+  let randomUser = users[randomIndex];
 
-  res.status(200).send(randomFortune);
+  res.status(200).send(randomUser);
+  
+});
+
+app.get("/api/weather", (req, res) => {
+  let weather = ["Sunny",
+					 "Rainy",
+					 "Overcast",
+           "Cold",
+  ];
+
+  // choose random fortune
+  let randomIndex = Math.floor(Math.random() * weather.length);
+  let randomWeather = weather[randomIndex];
+
+  res.status(200).send(randomWeather);
+  
+});
+
+app.get("/api/time", (req, res) => {
+  let time = ["Day",
+					 "Night"
+  ];
+
+  // choose random fortune
+  let randomIndex = Math.floor(Math.random() * time.length);
+  let randomTime = time[randomIndex];
+
+  res.status(200).send(randomTime);
   
 });
 
